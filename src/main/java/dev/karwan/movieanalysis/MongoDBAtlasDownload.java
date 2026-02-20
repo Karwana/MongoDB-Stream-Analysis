@@ -40,7 +40,7 @@ public class MongoDBAtlasDownload {
             System.out.println("Length of longest movie: "+ sm.lengthOfLongestMovie(movieList));
             System.out.println("Amount of unique genres "+sm.howManyUniqueGenres(movieList));
             System.out.println("Actors in highest rated movie "+sm.actorsInHighestRatedMovie(movieList));
-            System.out.println("dev.karwan.movieanalysis.Movie with fewest actors "+sm.movieWithTheFewestActorsListed(movieList));
+            System.out.println("Movie with fewest actors "+sm.movieWithTheFewestActorsListed(movieList));
             System.out.println("Amount of unique languages: "+sm.allUniqueLanguages(movieList));
             System.out.println("Has doublette titles: "+sm.anyDoubletteTitles(movieList));
             System.out.println("Amount of actors in more movies "+sm.amountOfActorsInMoreThanOneMovie(movieList));
