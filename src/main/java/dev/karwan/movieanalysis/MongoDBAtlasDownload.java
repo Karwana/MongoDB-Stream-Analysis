@@ -1,0 +1,58 @@
+package dev.karwan.movieanalysis;
+
+import com.mongodb.client.*;
+import org.bson.Document;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class MongoDBAtlasDownload {
+
+    // SearchMethods sm = new SearchMethods();
+
+    public MongoDBAtlasDownload() {
+
+        // Connect to MongoDB Atlas
+        String uri = "mongodb+srv://<your-username>:<your-password>@<yourCluster>.mongodb.net/?retryWrites=true&w=majority";
+
+        try (MongoClient mongoClient = MongoClients.create(uri)) {
+            MongoDatabase database = mongoClient.getDatabase("sample_mflix");
+            MongoCollection<Document> moviesCollection = database.getCollection("movies");
+
+            //Get all movies from 1975
+            List<Movie> movieList = new ArrayList<>();
+            for (Document doc : moviesCollection.find(new Document("year", 1975))) {
+                {
+                    movieList.add(Movie.fromDocument(doc));
+                }
+            }
+
+            // Print out all movies
+            for (Movie movie : movieList) {
+                System.out.println(movie);
+            }
+
+
+
+            //Use functions from SearchMethods to get statistics about the movies
+/*
+            System.out.println("Amount of movies: "+sm.howManyMovies(movieList));
+            System.out.println("Length of longest movie: "+ sm.lengthOfLongestMovie(movieList));
+            System.out.println("Amount of unique genres "+sm.howManyUniqueGenres(movieList));
+            System.out.println("Actors in highest rated movie "+sm.actorsInHighestRatedMovie(movieList));
+            System.out.println("dev.karwan.movieanalysis.Movie with fewest actors "+sm.movieWithTheFewestActorsListed(movieList));
+            System.out.println("Amount of unique languages: "+sm.allUniqueLanguages(movieList));
+            System.out.println("Has doublette titles: "+sm.anyDoubletteTitles(movieList));
+            System.out.println("Amount of actors in more movies "+sm.amountOfActorsInMoreThanOneMovie(movieList));
+            System.out.println("Actor in the most movies: "+sm.actorInTheMostMovies(movieList));
+*/
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        MongoDBAtlasDownload m = new MongoDBAtlasDownload();
+    }
+}
