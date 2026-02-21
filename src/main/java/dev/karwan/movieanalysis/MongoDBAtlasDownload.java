@@ -26,10 +26,10 @@ public class MongoDBAtlasDownload {
                 }
             }
 
-            //Use functions from SearchMethods to get statistics about the movies
-            System.out.println("Amount of movies: "+analyzer.howManyMoviesFrom1975(movieList));
-           // System.out.println("Length of longest movie: "+ sm.lengthOfLongestMovie(movieList));
-           // System.out.println("Amount of unique genres "+sm.howManyUniqueGenres(movieList));
+            //Use functions from MovieAnalyzer to get statistics about the movies
+            System.out.println("Amount of movies: "+ analyzer.howManyMoviesFrom1975(movieList));
+            System.out.println("Length of longest movie: "+ analyzer.lengthOfLongestMovie(movieList));
+            System.out.println("Amount of unique genres "+ analyzer.howManyUniqueGenres(movieList));
            // System.out.println("Actors in highest rated movie "+sm.actorsInHighestRatedMovie(movieList));
            // System.out.println("Movie with fewest actors "+sm.movieWithTheFewestActorsListed(movieList));
            // System.out.println("Amount of unique languages: "+sm.allUniqueLanguages(movieList));
