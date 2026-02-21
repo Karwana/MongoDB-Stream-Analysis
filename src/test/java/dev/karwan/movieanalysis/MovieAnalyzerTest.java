@@ -1,9 +1,12 @@
 package dev.karwan.movieanalysis;
 
-import java.util.ArrayList;
+import org.junit.jupiter.api.Test;
+
 import java.util.List;
 
 public class MovieAnalyzerTest {
+
+    MovieAnalyzer analyzer = new MovieAnalyzer();
 
     List<Movie> testMovies = List.of(
             new Movie("1", "The Bear", 1975, List.of("Drama"), "Steven Spielberg", List.of("Tom Cruise","Tom Hanks"), 8.3, List.of("English"), 125),
@@ -12,4 +15,11 @@ public class MovieAnalyzerTest {
             new Movie("4", "The Hunt", 1995, List.of("Horror"), "Christopher Nolan", List.of("Brad Pitt","Robin Williams"), 9.3, List.of("Swedish"), 172),
             new Movie("5", "The Hunt", 1965, List.of("Horror"), "George Lucas", List.of("Will Smith"), 6.3, List.of("Russian"), 142)
             );
+
+    @Test
+    void testHowManyMoviesFrom1975() {
+        long expected = 2;
+        long actual = analyzer.howManyMoviesFrom1975(testMovies);
+        assert actual == expected;
+    }
 }

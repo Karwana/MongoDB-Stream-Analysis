@@ -5,10 +5,9 @@ import org.bson.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MongoDBAtlasDownload {
 
-    // SearchMethods sm = new SearchMethods();
+    MovieAnalyzer analyzer = new MovieAnalyzer();
 
     public MongoDBAtlasDownload() {
 
@@ -27,25 +26,16 @@ public class MongoDBAtlasDownload {
                 }
             }
 
-            // Print out all movies
-            for (Movie movie : movieList) {
-                System.out.println(movie);
-            }
-
-
-
             //Use functions from SearchMethods to get statistics about the movies
-/*
-            System.out.println("Amount of movies: "+sm.howManyMovies(movieList));
-            System.out.println("Length of longest movie: "+ sm.lengthOfLongestMovie(movieList));
-            System.out.println("Amount of unique genres "+sm.howManyUniqueGenres(movieList));
-            System.out.println("Actors in highest rated movie "+sm.actorsInHighestRatedMovie(movieList));
-            System.out.println("Movie with fewest actors "+sm.movieWithTheFewestActorsListed(movieList));
-            System.out.println("Amount of unique languages: "+sm.allUniqueLanguages(movieList));
-            System.out.println("Has doublette titles: "+sm.anyDoubletteTitles(movieList));
-            System.out.println("Amount of actors in more movies "+sm.amountOfActorsInMoreThanOneMovie(movieList));
-            System.out.println("Actor in the most movies: "+sm.actorInTheMostMovies(movieList));
-*/
+            System.out.println("Amount of movies: "+analyzer.howManyMoviesFrom1975(movieList));
+           // System.out.println("Length of longest movie: "+ sm.lengthOfLongestMovie(movieList));
+           // System.out.println("Amount of unique genres "+sm.howManyUniqueGenres(movieList));
+           // System.out.println("Actors in highest rated movie "+sm.actorsInHighestRatedMovie(movieList));
+           // System.out.println("Movie with fewest actors "+sm.movieWithTheFewestActorsListed(movieList));
+           // System.out.println("Amount of unique languages: "+sm.allUniqueLanguages(movieList));
+           // System.out.println("Has doublette titles: "+sm.anyDoubletteTitles(movieList));
+           // System.out.println("Amount of actors in more movies "+sm.amountOfActorsInMoreThanOneMovie(movieList));
+           // System.out.println("Actor in the most movies: "+sm.actorInTheMostMovies(movieList));
 
         } catch (Exception e) {
             e.printStackTrace();
