@@ -1,5 +1,6 @@
 package dev.karwan.movieanalysis;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class MovieAnalyzer {
@@ -12,5 +13,9 @@ public class MovieAnalyzer {
     }
     public long howManyUniqueGenres(List<Movie> movies) {
         return movies.stream().flatMap(movie -> movie.getGenres().stream()).distinct().count();
+    }
+
+    public List<String> actorsInHighestRatedMovie(List<Movie> movies) {
+        return movies.stream().max(Comparator.comparingDouble(Movie::getImdbRating)).get().getCast();
     }
 }

@@ -1,8 +1,10 @@
 package dev.karwan.movieanalysis;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MovieAnalyzerTest {
 
@@ -35,6 +37,13 @@ public class MovieAnalyzerTest {
         long expected = 4;
         long actual = analyzer.howManyUniqueGenres(testMovies);
         assert actual == expected;
+    }
+
+    @Test
+    void actorsInHighestRatedMovie() {
+        List<String> expected = List.of("Brad Pitt","Robin Williams");
+        List<String> actual = analyzer.actorsInHighestRatedMovie(testMovies);
+        Assertions.assertEquals(expected, actual);
     }
 
 
