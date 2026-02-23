@@ -22,21 +22,21 @@ public class MovieAnalyzerTest {
     void testHowManyMoviesFrom1975() {
         long expected = 2;
         long actual = analyzer.howManyMoviesFrom1975(testMovies);
-        assert actual == expected;
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     void lengthOfLongestMovie() {
         int expected = 240;
         int actual = analyzer.lengthOfLongestMovie(testMovies);
-        assert actual == expected;
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     void howManyUniqueGenres() {
         long expected = 4;
         long actual = analyzer.howManyUniqueGenres(testMovies);
-        assert actual == expected;
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -57,15 +57,28 @@ public class MovieAnalyzerTest {
     void allUniqueLanguages() {
         long expected = 4;
         long actual = analyzer.allUniqueLanguages(testMovies);
-        assert actual == expected;
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     void anyDoubletteTitles() {
         boolean expected = true;
         boolean actual = analyzer.anyDoubletteTitles(testMovies);
-        assert actual == expected;
+        Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void amountOfActorsInMoreThanOneMovie() {
+        long expected = 1;
+        long actual = analyzer.amountOfActorsInMoreThanOneMovie(testMovies);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void actorInTheMostMovies() {
+        String expected = "Brad Pitt";
+        String actual = analyzer.actorInTheMostMovies(testMovies);
+        Assertions.assertEquals(expected, actual);
+    }
 
 }

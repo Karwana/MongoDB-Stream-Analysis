@@ -34,8 +34,8 @@ public class MongoDBAtlasDownload {
             System.out.println("Movie with fewest actors: "+ analyzer.movieWithTheFewestActorsListed(movieList));
             System.out.println("Amount of unique languages: "+ analyzer.allUniqueLanguages(movieList));
             System.out.println("Has doublette titles: "+ analyzer.anyDoubletteTitles(movieList));
-           // System.out.println("Amount of actors in more movies "+sm.amountOfActorsInMoreThanOneMovie(movieList));
-           // System.out.println("Actor in the most movies: "+sm.actorInTheMostMovies(movieList));
+            System.out.println("Amount of actors in more movies: "+ analyzer.amountOfActorsInMoreThanOneMovie(movieList));
+            System.out.println("Actor in the most movies: "+ analyzer.actorInTheMostMovies(movieList));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -45,4 +45,5 @@ public class MongoDBAtlasDownload {
     public static void main(String[] args) {
         MongoDBAtlasDownload m = new MongoDBAtlasDownload();
     }
+
 }
