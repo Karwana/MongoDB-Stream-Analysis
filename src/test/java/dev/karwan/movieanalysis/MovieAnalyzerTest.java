@@ -60,5 +60,12 @@ public class MovieAnalyzerTest {
         assert actual == expected;
     }
 
+    @Test
+    void anyDoubletteTitles() {
+        boolean expected = true;
+        boolean actual = analyzer.anyDoubletteTitles(testMovies);
+        assert actual == expected;
+    }
+
 
 }

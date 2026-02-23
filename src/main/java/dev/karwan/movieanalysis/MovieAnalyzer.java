@@ -10,7 +10,7 @@ public class MovieAnalyzer {
     }
 
     public int lengthOfLongestMovie(List<Movie> movies) {
-        return movies.stream().mapToInt(movie -> movie.getRuntime()).max().orElse(0);
+        return movies.stream().mapToInt(Movie::getRuntime).max().orElse(0);
     }
 
     public long howManyUniqueGenres(List<Movie> movies) {
@@ -27,5 +27,11 @@ public class MovieAnalyzer {
 
     public long allUniqueLanguages(List<Movie> movies) {
         return movies.stream().flatMap(movie -> movie.getLanguages().stream()).distinct().count();
+    }
+
+    public boolean anyDoubletteTitles(List<Movie> movies) {
+        long totalMovies = movies.size();
+        long uniqueTitles = movies.stream().map(Movie::getTitle).distinct().count();
+        return totalMovies != uniqueTitles;
     }
 }
