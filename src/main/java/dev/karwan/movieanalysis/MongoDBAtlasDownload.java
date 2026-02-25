@@ -36,6 +36,7 @@ public class MongoDBAtlasDownload {
             System.out.println("Has doublette titles: "+ analyzer.anyDoubletteTitles(movieList));
             System.out.println("Amount of actors in more movies: "+ analyzer.amountOfActorsInMoreThanOneMovie(movieList));
             System.out.println("Actor in the most movies: "+ analyzer.actorInTheMostMovies(movieList));
+            System.out.println("Movies from 1975 (HOF): " +  analyzer.filterMovies(movieList, movie -> movie.getYear() == 1975));
 
         } catch (Exception e) {
             e.printStackTrace();

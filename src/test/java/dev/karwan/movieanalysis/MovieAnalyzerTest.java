@@ -81,4 +81,11 @@ public class MovieAnalyzerTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void filterMovies() {
+        long expected = 2;
+        long actual = analyzer.filterMovies(testMovies, movie -> movie.getYear() == 1975);
+        Assertions.assertEquals(expected, actual);
+    }
+
 }

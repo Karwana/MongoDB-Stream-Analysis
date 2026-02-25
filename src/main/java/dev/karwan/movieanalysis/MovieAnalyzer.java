@@ -3,6 +3,7 @@ package dev.karwan.movieanalysis;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class MovieAnalyzer {
@@ -49,6 +50,10 @@ public class MovieAnalyzer {
                 .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey)
                 .orElse("Ingen skådespelare hittades");
+    }
+    // HOF
+    public long filterMovies(List<Movie> movies, Predicate<Movie> condition) {
+        return movies.stream().filter(condition).count();
     }
 
 }
