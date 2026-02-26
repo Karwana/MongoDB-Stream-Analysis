@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Objects;
 
 public class MovieAnalyzerTest {
 
@@ -87,5 +86,4 @@ public class MovieAnalyzerTest {
         long actual = analyzer.filterMovies(testMovies, movie -> movie.getYear() == 1975);
         Assertions.assertEquals(expected, actual);
     }
-
 }

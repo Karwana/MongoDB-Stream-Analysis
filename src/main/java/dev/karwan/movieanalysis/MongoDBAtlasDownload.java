@@ -11,7 +11,7 @@ public class MongoDBAtlasDownload {
 
     public MongoDBAtlasDownload() {
 
-        // Connect to MongoDB Atlas
+        // Connect to your own MongoDB Atlas
         String uri = "mongodb+srv://<your-username>:<your-password>@<yourCluster>.mongodb.net/?retryWrites=true&w=majority";
 
         try (MongoClient mongoClient = MongoClients.create(uri)) {
